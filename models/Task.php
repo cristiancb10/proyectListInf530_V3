@@ -160,7 +160,7 @@ class Task extends Connection{
 //se prepara la consulta con mysqli_prepare tomando en cuenta la conexion a la database
 // y la consulta SQL
         $stmt = mysqli_prepare($this->connection,
-        "SELECT * FROM task WHERE id_user = '$user_id' AND due_day = CURDATE()");
+        "SELECT * FROM task WHERE id_user = ? AND due_day = CURDATE()");
 //se parametriza o se convierte el valor recibido en entero
         $stmt->bind_param("i", $user_id);
 //se ejecuta la consulta
